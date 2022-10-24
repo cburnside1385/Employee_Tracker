@@ -1,0 +1,19 @@
+{
+  "name": "employee_tracker",
+  "version": "1.0.0",
+  "description": "Employee tracking system (ETS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cburnside1385/Employee_Tracker.git"
+  },
+  "author": "cburnside1385",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cburnside1385/Employee_Tracker/issues"
+  },
+  "homepage": "https://github.com/cburnside1385/Employee_Tracker#readme"
+}
