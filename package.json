@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest"
+  
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/cburnside1385/Employee_Tracker/issues"
   },
-  "homepage": "https://github.com/cburnside1385/Employee_Tracker#readme"
+  "homepage": "https://github.com/cburnside1385/Employee_Tracker#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "console.table": "^0.10.0",
+    "dotenv": "^16.0.3",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.0.0",
+    "mysql2": "^2.3.3"
+  }
 }
