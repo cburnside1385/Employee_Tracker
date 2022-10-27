@@ -14,7 +14,7 @@ const choiceList = () => {
             message: 'Select an option below:',
             choices: [
                 'All Employees',
-                'All Roles',
+                'All Positions',
                 'All Departments',
                 'Budgets',
                 'Update Employee Role',
@@ -39,15 +39,15 @@ const choiceList = () => {
             if (choices === 'All Departments') {
                 showDept();
             }
-            if (choices === 'All Roles') {
-                showRoles();
+            if (choices === 'All Positions') {
+                showPosition();
             }
 
             if (choices === 'Budgets') {
                 showBudg();
             }
 
-            if (choices === 'Update Employee Role') {
+            if (choices === 'Update Employee Position') {
                 updEmpRole();
             }
 
@@ -62,7 +62,7 @@ const choiceList = () => {
                 createEmp();
             }
 
-            if (choices === 'Add Role') {
+            if (choices === 'Add Position') {
                 createRole();
             }
 
@@ -78,7 +78,7 @@ const choiceList = () => {
             if (choices === 'Remove Department') {
                 deleteDept();
             }
-            if (choices === 'Remove Role') {
+            if (choices === 'Remove Position') {
                 deleteRole();
             }
             if (choices === 'Exit') {
@@ -89,10 +89,10 @@ const choiceList = () => {
 
 
 
-//Roles
-const showRoles = () => {
+//Position
+const showPosition = () => {
 
-    console.log('Current Employee Roles');
+    console.log('Current Employee Position');
     console.log(`____________________________________________________________`);
     const query = `SELECT role.id, role.title, department.name AS department
                   FROM role
@@ -178,13 +178,13 @@ const createEmp = () => {
             const rolequery = `SELECT role.id, role.title FROM role`;
             connection.query(rolequery, (error, data) => {
                 if (error) throw error;
-                const roles = data.map(({ id, title }) => ({ name: title, value: id }));
+                const Position = data.map(({ id, title }) => ({ name: title, value: id }));
                 inquirer.prompt([
                     {
                         type: 'list',
                         name: 'role',
                         message: "Employee's position",
-                        choices: roles
+                        choices: Position
                     }
                 ])
                     .then(roleChoice => {
@@ -274,7 +274,7 @@ const createRole = () => {
                     connection.query(query, crit, (error) => {
                         if (error) throw error;
                         console.log(`Role successfully created!`);
-                        showRoles();
+                        showPosition();
                     });
                 });
         };
@@ -374,7 +374,7 @@ const deleteRole = () => {
                 connection.query(query, [roleId], (error) => {
                     if (error) throw error;
                     console.log(`Position Successfully Removed`);
-                    showRoles();
+                    showPosition();
                 });
             });
     });
